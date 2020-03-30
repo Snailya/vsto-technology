@@ -28,16 +28,16 @@
     <AssemblyName>Vsto.Technology</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
+    <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
-    <InstallUrl>https://raw.githubusercontent.com/summoncse/ClickOnceOnGitHb/master/ClickOnceOnGit/ClickOnceOnGit/publish/</InstallUrl>
+    <InstallUrl>https://raw.githubusercontent.com/Snailya/vsto-technology/master/publish/</InstallUrl>
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
-    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <IsWebBootstrapper>True</IsWebBootstrapper>
+    <UpdateInterval>4</UpdateInterval>
+    <UpdateIntervalUnits>weeks</UpdateIntervalUnits>
     <ProductName>Vsto.Technology</ProductName>
     <PublisherName />
     <SupportUrl />
@@ -191,6 +191,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="JetSnail.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -209,7 +210,6 @@
       <DependentUpon>AddInTechnology.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-    <None Include="Vsto.Technology_TemporaryKey.pfx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -219,10 +219,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Vsto.Technology_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>JetSnail.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>7A11020C4BB0F872B349F0B6912FBFC783C378BD</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>1F9139C1148FD8AA90CACAD3433FC117B0FCACFC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -233,8 +233,8 @@
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
-        <Host Name="Excel" GeneratedCodeNamespace="Vsto.Technology" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="AddInTechnology.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="AddInTechnology.Designer.xml" GeneratedCode="AddInTechnology.Designer.cs" />
+        <Host Name="Excel" GeneratedCodeNamespace="Vsto.Technology" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="AddInTechnology.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="AddInTechnology.Designer.xml" GeneratedCode="AddInTechnology.Designer.cs" PublishedHash="1896400F8AB597A20536D618AF2238B44C4E7ED7" />
         </Host>
       </FlavorProperties>
     </VisualStudio>

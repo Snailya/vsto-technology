@@ -61,3 +61,12 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# behavior for Click-Once
+#
+# image files are treated as binary by default.
+###############################################################################
+*.manifest binary
+*.application binary
+*.deploy binary
