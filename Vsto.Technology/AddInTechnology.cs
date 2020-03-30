@@ -1,11 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using Microsoft.Office.Interop.Excel;
-using Microsoft.Office.Tools.Excel;
 using Office = Microsoft.Office.Core;
-using Workbook = Microsoft.Office.Interop.Excel.Workbook;
-using Worksheet = Microsoft.Office.Interop.Excel.Worksheet;
 
 namespace Vsto.Technology
 {
@@ -63,14 +60,12 @@ namespace Vsto.Technology
             // get header
             var header = _target.Worksheet.Range["A1"].Resize[4, _target.Columns.Count];
 
-            // add a new summary sheet
-            Worksheet ws = (_target.Worksheet.Parent as Workbook)?.Sheets.Add();
-            ws.Name = "汇总";
-
             // find all group label by finding where column B is blank but column C is not
             var labels = ((Range) _target.Columns["B"].Cells).Cast<Range>().Select(cell => cell.Value2)
                 .Distinct().Where(value => value != null);
 
+            // create a diction to store the starting address of each label
+            var dic = new Dictionary<string, string>();
             // foreach label, create a new sheet and copy to new sheet.
             foreach (var label in labels)
             {
@@ -78,33 +73,40 @@ namespace Vsto.Technology
                 var sheet = (_target.Worksheet.Parent as Workbook)?.Sheets.Add() as Worksheet;
                 sheet.Name = label;
 
-                // add content to that sheet
+                // find correspond content
                 var content = _target.Rows.Cast<Range>().Where(row =>
                     row.Columns["B"].Value2 == label || row.Columns["C"].Value2 == label);
+
+                // add location info to dictionary
+                dic.Add(label, (content.FirstOrDefault().Cells[1, 1] as Range).get_Address());
+
+                // write to the child sheet
                 // XXX: not work with linq
                 var i = 1;
                 foreach (var item in content) item.Copy(sheet.Rows[i++]);
+            }
 
-                // paste to a new summary sheet
+            // update link and add header for children sheets
+            foreach (var sheet in ((Workbook) _target.Worksheet.Parent).Sheets.Cast<Worksheet>()
+                .Where(sheet => labels.Contains(sheet.Name)))
+            {
                 sheet.UsedRange.Copy();
-                ws.Activate();
+                _target.Worksheet.Activate();
                 // paste format
-                ws.Range[(content.FirstOrDefault().Cells[1, 1] as Range).get_Address()].PasteSpecial(XlPasteType.xlPasteFormats,
+                _target.Worksheet.Range[dic[sheet.Name]].PasteSpecial(XlPasteType.xlPasteFormats,
                     XlPasteSpecialOperation.xlPasteSpecialOperationNone, false, false);
                 // paste content
                 // XXX: pastespecial with link not work
-                ws.Paste(Link: true);
+                _target.Worksheet.Paste(Link: true);
 
                 // add header for child sheet
                 header.Copy();
                 //sheet.Activate();
-                ((Range)sheet.Rows[1]).Insert(XlInsertShiftDirection.xlShiftDown);
-            }
+                ((Range) sheet.Rows[1]).Insert(XlInsertShiftDirection.xlShiftDown);
 
-            // Add header
-            ws.Activate();
-            ws.Range["A1"].Select();
-            ws.PasteSpecial();
+                // adjust column width
+                sheet.UsedRange.Columns.AutoFit();
+            }
         }
 
         #endregion
