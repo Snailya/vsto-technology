@@ -1,4 +1,4 @@
-# vsto-technology
+# Vsto.Technology
 
 Vsto.Technology is an excel add-in for generating quotation related excel sheets. It works by providing one or more commandbar controls on the right click menu of cell.
 
@@ -7,3 +7,4 @@ Vsto.Technology is an excel add-in for generating quotation related excel sheets
 - Install [JetSnail.cer](https://github.com/Snailya/vsto-technology/releases/download/1.0.0.0/JetSnail.cer). see https://jingyan.baidu.com/article/f0e83a255ab90222e59101ea.html for details.
 
 ## Installation
+run setup.exe.
