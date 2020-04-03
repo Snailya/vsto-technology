@@ -36,11 +36,11 @@
     <ApplicationVersion>1.1.0.0</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
-    <UpdateInterval>4</UpdateInterval>
+    <UpdateInterval>1</UpdateInterval>
     <UpdateIntervalUnits>weeks</UpdateIntervalUnits>
     <ProductName>Vsto.Technology</ProductName>
-    <PublisherName />
-    <SupportUrl />
+    <PublisherName>JetSnail</PublisherName>
+    <SupportUrl>https://github.com/Snailya/vsto-technology</SupportUrl>
     <FriendlyName>Vsto.Technology</FriendlyName>
     <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
