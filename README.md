@@ -12,3 +12,6 @@ Vsto.Technology is an excel add-in for generating quotation related excel sheets
 
 ## Installation
 Run setup.exe.
+
+## Troubleshoot
+- **指定的参数已超出有效值的范围** Please clear files inside `C:\Users\%Username%\AppData\Local\Apps\2.0`.
