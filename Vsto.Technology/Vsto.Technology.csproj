@@ -39,8 +39,8 @@
     <UpdateInterval>4</UpdateInterval>
     <UpdateIntervalUnits>weeks</UpdateIntervalUnits>
     <ProductName>Vsto.Technology</ProductName>
-    <PublisherName />
-    <SupportUrl />
+    <PublisherName>JetSnail</PublisherName>
+    <SupportUrl>https://github.com/Snailya/vsto-technology</SupportUrl>
     <FriendlyName>Vsto.Technology</FriendlyName>
     <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
