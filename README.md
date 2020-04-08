@@ -8,7 +8,7 @@ Vsto.Technology is an excel add-in for generating quotation related excel sheets
 
 ## Installation Requirements
 - **Edit your hosts.** This may not be neccessary but strongly relevant to your network settings because of some unspeakable reason. However, you may edit your hosts file at C:\Windows\System32\drivers\etc\hosts by adding a new line `151.101.4.133 raw.githubusercontent.com`.
-- **Install [JetSnail.cer](https://github.com/Snailya/vsto-technology/releases/download/1.0.0.0/JetSnail.cer).** see https://jingyan.baidu.com/article/f0e83a255ab90222e59101ea.html for details.
+- **Install certification.** Download [JetSnail.cer](https://github.com/Snailya/vsto-technology/releases/download/1.0.0.0/JetSnail.cer) in release page. see https://jingyan.baidu.com/article/f0e83a255ab90222e59101ea.html for installtion.
 
 ## Installation
 Run setup.exe.
