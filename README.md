@@ -14,4 +14,4 @@ Vsto.Technology is an excel add-in for generating quotation related excel sheets
 Run setup.exe.
 
 ## Troubleshoot
-- **System.ArgumentOutOfRangeException: 指定的参数已超出有效值的范围。** Please clear files inside `C:\Users\%Username%\AppData\Local\Apps\2.0`.
+- **System.ArgumentOutOfRangeException: Argument is out of range.** Please clear files inside `C:\Users\%Username%\AppData\Local\Apps\2.0`.
