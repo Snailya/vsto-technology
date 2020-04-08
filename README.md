@@ -11,7 +11,7 @@ Vsto.Technology将为Excel单元格右键菜单增加额外功能按钮。
 - **安装证书.** 下载Release页面中的 [JetSnail.cer](https://github.com/Snailya/vsto-technology/releases/download/1.0.0.0/JetSnail.cer) 。 安装方法见 https://jingyan.baidu.com/article/f0e83a255ab90222e59101ea.html 。
 
 ## 安装
-运行Release页面中的setup.ext。
+运行Release页面中的`setup.exe`。
 
 ## 问题
 - **System.ArgumentOutOfRangeException: 指定的参数已超出有效值范围** 清空`C:\Users\%Username%\AppData\Local\Apps\2.0`内文件.
@@ -31,7 +31,7 @@ Vsto.Technology is an excel add-in for generating quotation related excel sheets
 - **Install certification.** Download [JetSnail.cer](https://github.com/Snailya/vsto-technology/releases/download/1.0.0.0/JetSnail.cer) in release page. See https://jingyan.baidu.com/article/f0e83a255ab90222e59101ea.html for installtion.
 
 ## Installation
-Run setup.exe.
+Run `setup.exe`.
 
 ## Troubleshoot
 - **System.ArgumentOutOfRangeException: Argument is out of range.** Please clear files inside `C:\Users\%Username%\AppData\Local\Apps\2.0`.
