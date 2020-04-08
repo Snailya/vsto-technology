@@ -14,12 +14,12 @@ namespace Vsto.Technology
             // add a new handler on sheet before right click
             Globals.AddInTechnology.Application.SheetBeforeRightClick += ApplicationOnSheetBeforeRightClick;
 
-            // add a new control
+            // add a new control, if temporary is false, the functionality may lost though the button is still there after close and then reopen
             _generateSheetsButton = (Office.CommandBarButton) Globals.AddInTechnology.Application
                 .CommandBars["cell"].Controls.Add(
                     Office.MsoControlType.msoControlButton,
                     missing, missing, missing, true);
-            _generateSheetsButton.BeginGroup = true;
+            _generateSheetsButton.Tag = "gsb";
             _generateSheetsButton.Caption = "生成表";
             _generateSheetsButton.Click += _generateSheetsButton_Click;
             _generateSheetsButton.Move(Before: 1);
@@ -28,7 +28,7 @@ namespace Vsto.Technology
                 .CommandBars["cell"].Controls.Add(
                     Office.MsoControlType.msoControlButton,
                     missing, missing, missing, true);
-            _generateChildrenSheetsButton.BeginGroup = true;
+            _generateChildrenSheetsButton.Tag = "gcsb";
             _generateChildrenSheetsButton.Caption = "生成子表";
             _generateChildrenSheetsButton.Click += _generateChildrenSheetsButton_Click;
             _generateChildrenSheetsButton.Move(Before: 2);
@@ -38,9 +38,8 @@ namespace Vsto.Technology
         private void AddInTechnology_Shutdown(object sender, EventArgs e)
         {
             // remove the control
-            // XXX: better check existence before delete
-            _generateSheetsButton?.Delete();
-            _generateChildrenSheetsButton?.Delete();
+            Globals.AddInTechnology.Application.CommandBars["cell"].FindControl(Tag: "gsb")?.Delete();
+            Globals.AddInTechnology.Application.CommandBars["cell"].FindControl(Tag: "gcsb")?.Delete();
 
             // remove sheet before right click handler
             Globals.AddInTechnology.Application.SheetBeforeRightClick -= ApplicationOnSheetBeforeRightClick;
@@ -230,8 +229,6 @@ namespace Vsto.Technology
         // Declares at class level to avoid being garbage collected
         private Office.CommandBarButton _generateSheetsButton;
         private Office.CommandBarButton _generateChildrenSheetsButton;
-
-        private dynamic ss;
 
         #endregion
     }
