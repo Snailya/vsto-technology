@@ -7,7 +7,7 @@ Vsto.Technology将为Excel单元格右键菜单增加额外功能按钮。
 - **生成子表.** Split user selection range by distinct values at Column B into different children sheets and update the origin sheet linking with these children sheets. Then add headers for each child sheet. The header is specificied as the top 4 rows of the origin sheet with a column width the same as user selection range. You can split the whole origin sheet or just split part of that, while the link will only be generate if it has been split.
 
 ## 安装准备
-- **编辑hosts.** 这不是必须的。如果你无法打开https://raw.githubusercontent.com ，请在本机上使用文本编辑器打开`C:\Windows\System32\drivers\etc\hosts`并添加`151.101.4.133 raw.githubusercontent.com`。
+- **编辑hosts.** *这不是必须的。*如果你无法打开https://raw.githubusercontent.com ，请在本机上使用文本编辑器打开`C:\Windows\System32\drivers\etc\hosts`并添加`151.101.4.133 raw.githubusercontent.com`。
 - **安装证书.** 下载Release页面中的 [JetSnail.cer](https://github.com/Snailya/vsto-technology/releases/download/1.0.0.0/JetSnail.cer) 。 安装方法见 https://jingyan.baidu.com/article/f0e83a255ab90222e59101ea.html 。
 
 ## 安装
@@ -16,6 +16,7 @@ Vsto.Technology将为Excel单元格右键菜单增加额外功能按钮。
 ## 问题
 - **System.ArgumentOutOfRangeException: 指定的参数已超出有效值范围** 清空`C:\Users\%Username%\AppData\Local\Apps\2.0`内文件.
 
+---
 
 # Vsto.Technology
 
