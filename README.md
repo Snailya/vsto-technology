@@ -8,7 +8,7 @@ Vsto.Technology将为Excel单元格右键菜单增加额外功能按钮。
 
 ## 安装准备
 - **编辑hosts** _这不是必须的。_ 如果你无法打开https://raw.githubusercontent.com ，请在本机上使用文本编辑器打开`C:\Windows\System32\drivers\etc\hosts`并添加`151.101.4.133 raw.githubusercontent.com`。
-- **安装证书                        ** 下载Release页面中的 [JetSnail.cer](https://github.com/Snailya/vsto-technology/releases/download/1.0.0.0/JetSnail.cer) 。 安装方法见 https://jingyan.baidu.com/article/f0e83a255ab90222e59101ea.html 。
+- **安装证书** 下载Release页面中的 [JetSnail.cer](https://github.com/Snailya/vsto-technology/releases/download/1.0.0.0/JetSnail.cer) 。 安装方法见 https://jingyan.baidu.com/article/f0e83a255ab90222e59101ea.html 。
 
 ## 安装
 运行Release页面中的`setup.exe`。
